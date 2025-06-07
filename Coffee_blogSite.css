@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom transitions */
+.transition-smooth {
+  transition-property: background-color, color, border-color, box-shadow, transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button hover effect */
+.btn-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(255, 190, 40, 0.4);
+}
+
+/* Scroll to top button fade-in/out */
+#scrollTopBtn {
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Dark mode support */
+:root {
+  --color-bg-light: #f9fafb;
+  --color-text-light: #1f2937;
+  --color-bg-dark: #121212;
+  --color-text-dark: #e5e7eb;
+  --color-primary-light: #220f01; /* amber-700 */
+  --color-primary-dark: #fcb607;  /* amber-400 */
+}
+
+/* Light mode variables */
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+/* Dark mode variables */
+body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+/* Navbar colors */
+nav {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+body.dark nav {
+  background-color: var(--color-primary-dark);
+  color: #222;
+}
+
+/* Scroll to top button colors */
+#scrollTopBtn {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+body.dark #scrollTopBtn {
+  background-color: var(--color-primary-dark);
+  color: #222;
+}
+
+/* Link colors */
+a {
+  color: var(--color-primary-light);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fbbf24;
+}
+
+body.dark a {
+  color: var(--color-primary-dark);
+}
+
+body.dark a:hover {
+  color: #b45309;
+}
+
+/* Input and button styling for dark mode */
+input, button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark input {
+  background-color: #222;
+  color: var(--color-text-dark);
+  border-color: #444;
+}
+
+body.dark input:focus {
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 5px var(--color-primary-dark);
+  outline: none;
+}
+
+body.dark button {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark button:hover {
+  background-color: #b45309;
+}
+
+/* Toggle switch styles */
+.toggle-switch {
+  cursor: pointer;
+  width: 40px;
+  height: 22px;
+  background: var(--color-primary-light);
+  border-radius: 9999px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch.dark {
+  background: var(--color-primary-dark);
+}
+
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch.dark::before {
+  transform: translateX(18px);
+}
+
+/* Image hover scale */
+img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+/* Focus visible outlines */
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+body.dark :focus-visible {
+  outline: 2px solid var(--color-primary-dark);
+}
+
+/* Utility class for smooth transform */
+.transform-smooth {
+  transition: transform 0.3s ease;
+}
